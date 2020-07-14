@@ -2,7 +2,7 @@
 PURPLE: #A16CAE
 TEAL: #388FC3
 GREEN: #89C97F
-ORANGE: #F3375F
+ORANGE: #F5755C
 */
 
 html, body {
@@ -25,9 +25,6 @@ main {
   background: -webkit-linear-gradient(45deg,  #388fc3 0%,#a16cae 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(45deg,  #388fc3 0%,#a16cae 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#388fc3', endColorstr='#a16cae',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 #ngp {
@@ -42,7 +39,6 @@ main {
   animation-timing-function: cubic-bezier(.2,.42,.1,.95);
   animation-duration: 5s;
   animation-fill-mode: forwards;
-
 }
 
 @keyframes ngpfadein {
@@ -56,30 +52,62 @@ main {
   }
 }
 
-#intro {
-  height: 100vh;
-  width: 100vw;
+section {
+  height: calc(100vh - 100px);
+  width: calc(100vw - 100px);
+  padding: 50px;
   position: relative;
   z-index: 2;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+  /* TODO: ADD FOCUS STYLES!!!! */
+}
+
+.inset {
+  box-shadow: inset -3px 0px 3px rgba(0,0,0,0.1), -3px 0px 3px 0px rgba(255, 255, 255, 0.1);
+}
+
+.close {
+  position: absolute;
+  top: 60px;
+  right: 60px;
+}
+
+.close img {
+  width: 35px;
+  height: 35px;
+}
+
+section#intro {
+}
 
 #logo {
   width: 80vw;
   max-width: 550px;
   height: auto;
   opacity: 0;
-  animation: logofadein;
+  animation: fadein;
   animation-duration: 2s;
   animation-delay: 0.5s;
   animation-fill-mode: forwards;
   z-index: 2;
 }
 
-@keyframes logofadein {
+@keyframes fadein {
   0 {
     opacity: 0;
   }
@@ -88,6 +116,43 @@ main {
   }
 }
 
-#about, button {
+@keyframes slidein {
+  0 {
+    left: 100%;
+  }
+  100% {
+    left: 10%;
+  }
+}
+
+
+#toggle-about {
   z-index: 2;
+  position: relative;
+  bottom: -75px;
+  opacity: 0;
+  animation: fadein;
+  animation-duration: 1s;
+  animation-delay: 1.5s;
+  animation-fill-mode: forwards;
+  background: transparent;
+  padding: 10px;
+  border-radius: 100%;
+}
+
+#toggle-about img {
+  width: 35px;
+  height: 35px;
+  display: block;
+}
+
+section#about {
+  z-index: 2;
+  background: #fff;
+  position: relative;
+  width: calc(90% - 100px);
+  left: 100%;
+  animation: slidein;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
