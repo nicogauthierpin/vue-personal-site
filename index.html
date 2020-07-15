@@ -8,12 +8,14 @@
   </head>
   <body>
     <main id="app">
-      <section id="intro" v-if="!isAboutOpen">
-        <img id="logo" src="img/ngp-logo.svg" alt="Nicolas Gauthier-Pin">
-        <button v-on:click="toggleAbout" id="toggle-about" class="inset"><img src="img/info-with-circle.svg" alt="About"></button>
-      </section>
+      <transition name="load">
+        <section id="intro">
+          <img id="logo" src="img/ngp-logo.svg" alt="Nicolas Gauthier-Pin">
+          <button v-on:click="toggleAbout" id="toggle-about" class="inset"><img src="img/info-with-circle.svg" alt="About"></button>
+        </section>
+      </transition>
 
-      <transition name="slide-left">
+      <transition name="section-open">
         <section id="about" v-if="isAboutOpen">
           <div class="section-border">
             <img class="section-border-icon" src="img/info.svg" alt="" aria-hidden="true">

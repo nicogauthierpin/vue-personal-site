@@ -64,10 +64,12 @@ main {
 /* --- SECTION STYLES --- */
 
 section {
-  height: calc(100vh - 100px);
-  width: calc(100vw - 100px);
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
   padding: 50px;
-  position: relative;
+  position: absolute;
   z-index: 2;
   display: flex;
   flex-direction: column;
@@ -149,6 +151,29 @@ section {
   top: calc(10% + 43px);
   height: 22px;
   width: 22px;
+}
+
+.section-open-enter-active,
+.section-open-leave-active  {
+  transition: transform 1s;
+  transition-timing-function: cubic-bezier(.27,.09,.52,.88);
+}
+
+.section-open-enter,
+.section-open-leave-to {
+  transform: translateX(110%);
+}
+
+
+.load-enter-active,
+.load-leave-active  {
+  transition: all 1s;
+  transition-timing-function: cubic-bezier(.27,.09,.52,.88);
+}
+
+.load-enter,
+.load-leave-to {
+  opacity: 0;
 }
 
 
@@ -268,9 +293,8 @@ section#intro {
 section#about {
   z-index: 2;
   background: #fff;
-  position: relative;
-  width: calc(80% - 100px);
-  left: 20%;
+  width: 80%;
+  margin-left: 20%;
   /* left: 100%; */
   /* animation: slidein;
   animation-duration: 1s;
