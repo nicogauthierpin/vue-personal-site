@@ -214,11 +214,6 @@ button:focus {
   position: absolute;
   top: 20px;
   left: 20px;
-  /* opacity: 0;
-  animation: fadein;
-  animation-duration: 1s;
-  animation-delay: 1.5s;
-  animation-fill-mode: forwards; */
   background: transparent;
   padding: 10px;
   border-radius: 100%;
@@ -295,10 +290,6 @@ section#about {
   background: #fff;
   width: 80%;
   margin-left: 20%;
-  /* left: 100%; */
-  /* animation: slidein;
-  animation-duration: 1s;
-  animation-fill-mode: forwards; */
 }
 
 aside#social {
