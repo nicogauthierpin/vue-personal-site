@@ -3,10 +3,78 @@ PURPLE: #A16CAE
 TEAL: #388FC3
 GREEN: #89C97F
 ORANGE: #F5755C
-
 Icons from http://entypo.com/
-
 */
+
+
+/* --- MAIN AND BACKGROUND STYLES --- */
+
+
+
+html, body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  background: #eee;
+  position: relative;
+  overflow:  hidden;
+  }
+
+
+main {
+  height: 100vh;
+  width: 100vw;
+  overflow:hidden;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#388fc3+0,a16cae+100 */
+  background: #388fc3; /* Old browsers */
+  background: -moz-linear-gradient(45deg,  #388fc3 0%, #a16cae 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg,  #388fc3 0%,#a16cae 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg,  #388fc3 0%,#a16cae 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#388fc3', endColorstr='#a16cae',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+#ngp {
+  position: absolute;
+  z-index: 1;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* height: 120vh;
+  opacity: 0;
+  animation: ngpfadein;
+  animation-timing-function: cubic-bezier(.2,.42,.1,.95);
+  animation-duration: 5s;
+  animation-fill-mode: forwards; */
+  opacity: 0.05;
+  height: 150vh;
+}
+
+@keyframes ngpfadein {
+  0 {
+    opacity: 0;
+    height: 120vh;
+  }
+  100% {
+    opacity: 0.05;
+    height: 150vh;
+  }
+}
+
+/* --- SECTION STYLES --- */
+
+section {
+  height: calc(100vh - 100px);
+  width: calc(100vw - 100px);
+  padding: 50px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 
 .section-border {
   position: absolute;
@@ -84,66 +152,7 @@ Icons from http://entypo.com/
 }
 
 
-html, body {
-  height: 100vh;
-  width: 100vw;
-  margin: 0;
-  padding: 0;
-  background: #eee;
-  position: relative;
-  overflow:  hidden;
-  }
-
-main {
-  height: 100vh;
-  width: 100vw;
-  overflow:hidden;
-  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#388fc3+0,a16cae+100 */
-  background: #388fc3; /* Old browsers */
-  background: -moz-linear-gradient(45deg,  #388fc3 0%, #a16cae 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(45deg,  #388fc3 0%,#a16cae 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(45deg,  #388fc3 0%,#a16cae 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#388fc3', endColorstr='#a16cae',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-}
-
-#ngp {
-  position: absolute;
-  z-index: 1;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /* height: 120vh;
-  opacity: 0;
-  animation: ngpfadein;
-  animation-timing-function: cubic-bezier(.2,.42,.1,.95);
-  animation-duration: 5s;
-  animation-fill-mode: forwards; */
-  opacity: 0.05;
-  height: 150vh;
-}
-
-@keyframes ngpfadein {
-  0 {
-    opacity: 0;
-    height: 120vh;
-  }
-  100% {
-    opacity: 0.05;
-    height: 150vh;
-  }
-}
-
-section {
-  height: calc(100vh - 100px);
-  width: calc(100vw - 100px);
-  padding: 50px;
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+/* --- BUTTON STYLES --- */
 
 button {
   background: none;
@@ -172,6 +181,32 @@ button:focus {
   width: 35px;
   height: 35px;
 }
+
+
+
+#back-home {
+  z-index: 2;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  /* opacity: 0;
+  animation: fadein;
+  animation-duration: 1s;
+  animation-delay: 1.5s;
+  animation-fill-mode: forwards; */
+  background: transparent;
+  padding: 10px;
+  border-radius: 100%;
+}
+
+#back-home img {
+  width: 26px;
+  height: 26px;
+  display: block;
+}
+
+/* --- INTRO SECTION --- */
+
 
 section#intro {
 }
@@ -207,8 +242,7 @@ section#intro {
 }
 
 
-#toggle-about,
-#back-home {
+#toggle-about {
   z-index: 2;
   position: relative;
   bottom: -75px;
@@ -228,18 +262,7 @@ section#intro {
   display: block;
 }
 
-#back-home {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  bottom: auto;
-}
-
-#back-home img {
-  width: 26px;
-  height: 26px;
-  display: block;
-}
+/* --- ABOUT SECTION --- */
 
 
 section#about {
