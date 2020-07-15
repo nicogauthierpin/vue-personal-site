@@ -12,15 +12,32 @@
         <img id="logo" src="img/ngp-logo.svg" alt="Nicolas Gauthier-Pin">
         <button v-on:click="toggleAbout" id="toggle-about" class="inset"><img src="img/info-with-circle.svg" alt="About"></button>
       </section>
-      <section id="about" v-if="isAboutOpen">
-        <p>I am a self-taught front-end web developer, with a background on graphic design.</p>
-        <p>My schooling background is in Engineering. I was one of those kids who liked to disassemble things to see how they work. I still like to do it, but I quickly realized I didn’t want to make a career out of it. Still, my technical background comes in handy for the web part of web design. At some point all the visuals have to be transfered to code.</p>
-        <p>I was born and raised in Argentina, and lived in London, Montréal, San Francisco, and now LA. I’ve also spent significant time in New York and Toronto. I am 100% bilingual in english and spanish, and I can speak beginner italian and just a tiny little bit of french.</p>
-        <p>AM I UP TO<br>
-        I am currently the Interactive Manager at Gunn | Jerkens, a marketing agency in Long Beach, CA, where we build websites and interactive experiences for real estate developers. Prior to that I freelanced for over 10 years, working with clients ranging from individuals to large corporations, in at least four different continents.</p>
-        <p>On the side, I am active in the local Wordpress and developer community in Long Beach. I am one of the organizers of the Long Beach chapter of the Wordpress LA meetup, I was part of the organizing team of WordCamp Long Beach 2019 [link], and I am a regular attendant of the Code&&Coffee meetup [link to profile]. I'm also involved in the Long Beach Community Theater [link], lending a hand with everything web and whatever else is needed.</p>
-          <button class="close" v-on:click="toggleAbout"><img src="img/circle-with-cross.svg" alt="Close"></button>
-      </section>
+
+      <div id="xyz"></div>
+
+      <transition name="slide-left">
+        <section id="about" v-if="isAboutOpen">
+          <div class="section-border">
+            <img class="section-border-icon" src="img/info.svg" alt="" aria-hidden="true">
+            <div class="section-border-top"></div>
+            <div class="section-border-circle"></div>
+            <div class="section-border-bottom"></div>
+          </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <button class="close" v-on:click="toggleAbout"><img src="img/circle-with-cross.svg" alt="Close"></button>
+        </section>
+      </transition>
+
+      <aside id="social" class="inset" v-if="isAboutOpen">
+        <a href="#"><img src="img/facebook-with-circle.svg" alt="Facebook"></a>
+        <a href="#"><img src="img/instagram-with-circle.svg" alt="Instagram"></a>
+        <a href="#"><img src="img/github-with-circle.svg" alt="Github"></a>
+        <a href="#"><img src="img/linkedin-with-circle.svg" alt="LInkedin"></a>
+      </aside>
+
+      <transition name="home-fadein">
+        <button v-on:click="backHome" v-if="isAboutOpen" id="back-home" class="inset"><img src="img/home-with-circle.svg" alt="Home"></button>
+      </transition>
       <img id="ngp" src="img/ngp.svg" alt="" aria-hidden="true">
     </main>
   </body>
