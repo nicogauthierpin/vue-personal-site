@@ -194,6 +194,20 @@ section {
 .section-content {
   max-height: 90vh;
   overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #1111110d #ffffff; 
+}
+
+.section-content::-webkit-scrollbar {
+  width: 23px;
+}
+.section-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+.section-content::-webkit-scrollbar-thumb {
+  background-color: #1111110d;
+  border-radius: 3px;
+  border-left: 20px solid #ffffff;
 }
 
 /* --- BUTTON STYLES --- */
