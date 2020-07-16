@@ -40,7 +40,7 @@ Vue.component('social', {
       <a href="https://www.facebook.com/nicolaspin"><img src="img/facebook-with-circle.svg" alt="Facebook"></a>\
       <a href="https://www.instagram.com/nicogauthierpin/"><img src="img/instagram-with-circle.svg" alt="Instagram"></a>\
       <a href="https://github.com/nicogauthierpin"><img src="img/github-with-circle.svg" alt="Github"></a>\
-      <a href="https://www.linkedin.com/feed/"><img src="img/linkedin-with-circle.svg" alt="LInkedin"></a>\
+      <a href="www.linkedin.com/in/nicogauthierpin"><img src="img/linkedin-with-circle.svg" alt="LInkedin"></a>\
     </aside>'
 });
 
