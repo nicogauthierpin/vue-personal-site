@@ -77,6 +77,14 @@ main {
   animation-fill-mode: forwards;
 }
 
+@media (max-width: 768px) {
+  #ngp {
+    width: 180vh;
+    transform: translate(-50%, -50%) rotate(-90deg);
+  }
+}
+
+
 @keyframes ngpfadein {
   0 {
     opacity: 0;
@@ -113,6 +121,17 @@ section {
     justify-content: center;
 }
 
+@media (max-width: 768px) {
+  section {
+    padding: 30px 30px 30px 20px;
+  }
+}
+
+@media (max-width: 620px) {
+  section {
+    padding: 0px 10px 10px 20px;
+  }
+}
 
 .section-border {
   position: absolute;
@@ -120,6 +139,16 @@ section {
   height: 100%;
   width: 40px;
 }
+
+@media (max-width: 620px) {
+  .section-border {
+    left: 0;
+    height: 40px;
+    width: 100%;
+    top: -40px;
+  }
+}
+
 
 .section-border-top {
   background: #fff;
@@ -130,6 +159,13 @@ section {
   height: calc(10% + 29px);
   box-shadow: -6px -6px 6px rgba(0, 0, 0, 0.12);
   z-index: 3;
+}
+
+@media (max-width: 620px) {
+  .section-border-top {
+    height: 40px;
+    width: calc(20% + 29px);
+  }
 }
 
 .section-border-circle {
@@ -143,6 +179,15 @@ section {
   left: 0px;
 }
 
+@media (max-width: 620px) {
+  .section-border-circle {
+    background:radial-gradient(circle at 55px 0px,transparent 25px,white 26px);
+    height: 40px;
+    width: 110px;
+    top: 0;
+    left: 20%;
+  }
+}
 .section-border-circle::before {
   content: "";
   z-index: 1;
@@ -154,7 +199,14 @@ section {
   left: -26px;
   border-radius: 100%;
   box-shadow: inset -6px 0px 3px rgba(0, 0 ,0 ,0.1);
+}
 
+@media (max-width: 620px) {
+  .section-border-circle::before {
+    left: calc(10% + 18px);
+    top: -26px;
+    box-shadow: inset 0px -6px 3px rgba(0, 0 ,0 ,0.1);
+  }
 }
 
 .section-border-circle::after {
@@ -168,6 +220,15 @@ section {
   top: 20%;
 }
 
+@media (max-width: 620px) {
+  .section-border-circle::after {
+    height: 15px;
+    width: 68px;
+    top: 30px;
+    left: 20%;
+  }
+}
+
 .section-border-bottom {
   background: #fff;
   width: 40px;
@@ -179,6 +240,18 @@ section {
   z-index: 3;
 }
 
+@media (max-width: 620px) {
+  .section-border-bottom {
+    bottom: auto;
+    left: auto;
+    top: 0;
+    right: 0;
+    height: 40px;
+    width: calc(80% - 81px);
+    box-shadow: 6px -6px 6px rgba(0, 0, 0, 0.12);
+
+  }
+}
 
 .section-border-icon {
   position: absolute;
@@ -187,6 +260,13 @@ section {
   top: calc(10% + 43px);
   height: 22px;
   width: 22px;
+}
+
+@media (max-width: 620px) {
+  .section-border-icon {
+    top: -11px;
+    left: calc(20% + 43px);
+  }
 }
 
 .section-open-enter-active,
@@ -199,6 +279,14 @@ section {
 .section-open-leave-to {
   transform: translateX(110%);
 }
+
+@media (max-width: 620px) {
+  .section-open-enter,
+  .section-open-leave-to {
+    transform: translateY(110%);
+  }
+}
+
 
 .section-content {
   max-height: 90vh;
@@ -288,7 +376,7 @@ section#intro {
 }
 
 #logo {
-  width: 80vw;
+  width: 90vw;
   max-width: 550px;
   height: auto;
   opacity: 0;
@@ -341,6 +429,77 @@ section#about {
     align-items: flex-start;
 }
 
+@media (max-width: 620px) {
+  section#about {
+    width: 100%;
+    margin-left: 0;
+    height: calc(100% - 126px); /* 86px space + 40px border */
+    margin-top: 126px;
+  }
+}
+
+.funfact {
+  position: relative;
+  animation: blink 20s infinite;
+}
+
+.funfact:nth-of-type(1) {
+  animation-delay: 1.2s;
+}
+.funfact:nth-of-type(2) {
+  animation-delay: 0.3s;
+}
+.funfact:nth-of-type(3) {
+  animation-delay: 0s;
+}
+.funfact:nth-of-type(4) {
+  animation-delay: 0.9s;
+}
+.funfact:nth-of-type(5) {
+  animation-delay: 1.5s;
+}
+.funfact:nth-of-type(6) {
+  animation-delay: 0.6s;
+}
+.funfact .tooltip {
+  display: none;
+  position: absolute;
+  bottom: 25px;
+  left: -55px;
+  background: #ffffff;
+  padding: 6px;
+  box-shadow: -2px 2px 3px 2px rgba(0, 0, 0, 0.12);
+}
+
+.funfact:hover .tooltip {
+  display: block;
+}
+
+.funfact .tooltip img {
+  height: 150px;
+  width: 150px;
+  display: block;
+}
+
+@keyframes blink {
+  0 {
+    color: #111;
+  }
+  48% {
+    color: #111;
+  }
+  50% {
+    color: #89C97F;
+  }
+  52% {
+    color: #111;
+  }
+  100% {
+    color: #111;
+  }
+}
+
+
 aside#social {
   position: absolute;
   left: 20px;
@@ -350,6 +509,15 @@ aside#social {
   z-index: 999;
 }
 
+@media (max-width: 620px) {
+  aside#social {
+    left: auto;
+    bottom: auto;
+    top: 20px;
+    right: 20px;
+  }
+}
+
 aside#social img {
   height: 26px;
   width: 26px;
@@ -357,8 +525,17 @@ aside#social img {
   margin-bottom: 10px;
 }
 
+@media (max-width: 620px) {
+  aside#social img {
+    float: left;
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
+}
+
 aside#social a:last-of-type img {
   margin-bottom: 0;
+  margin-right: 0;
 }
 
 .social-fadein-enter-active {
