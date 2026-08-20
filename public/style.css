@@ -86,7 +86,7 @@ main {
 
 
 @keyframes ngpfadein {
-  0 {
+  0% {
     opacity: 0;
     height: 120vh;
   }
@@ -388,7 +388,7 @@ section#intro {
 }
 
 @keyframes fadein {
-  0 {
+  0% {
     opacity: 0;
   }
   100% {
@@ -498,7 +498,7 @@ section#about {
 }
 
 @keyframes blink {
-  0 {
+  0% {
     color: #111;
   }
   48% {
